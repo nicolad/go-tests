@@ -11,9 +11,13 @@ type Rectangle struct {
 	Height float64
 }
 
+type Shape interface {
+	Area() float64
+}
+
 func (c Circle) Area() float64 {
 	pi := math.Pi
-	return pi * c.Radius * c.Radius
+	return math.Round(pi * c.Radius * c.Radius)
 }
 
 func (r Rectangle) Area() float64 {
